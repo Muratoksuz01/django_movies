@@ -1,0 +1,114 @@
+<header>
+    
+    <nav class="ps-4 navbar navbar-dark bg-primary navbar-expand-lg ">
+        <a class="navbar-brand" href="{% url 'index' %}">Movie App</a>
+        
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+            </li>
+            {% comment %} <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+            </li> {% endcomment %}
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">Movies</a>
+            </li>              
+        </ul>
+            
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> 
+         
+         {% comment %} <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown button
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div> {% endcomment %}
+
+          
+            <li class="nav-item">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#login_modal">Login</button>
+            </li>
+            <li class="nav-item">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#register_modal">Register</button>
+            </li>
+
+
+           
+        </ul>
+
+            
+    </nav>
+</div>
+    <div class="modal fade" fade acılış efekti sağlıyor id="login_modal" >
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title " >LOGIN</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" ></button>
+            </div>
+            <div class="modal-body">
+              <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                <label class="form-label" for="username"> Username</label>
+                <input class="form-control" type="text" name="username" id="username" placeholder="type your username"> 
+                <label class="form-label" for="password"> password</label>
+                <input class="form-control" type="text" name="password" id="password" placeholder="type your password"> 
+                <br><br>
+                <button class="btn btn-primary d-flex justify-content-center " type="submit"> login</button>
+              </form>
+            </div>
+           
+        </div>
+    </div>
+</div>
+
+</div>
+<div class="modal fade" fade acılış efekti sağlıyor id="register_modal" >
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title " >REGISTER</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" ></button>
+        </div>
+        <div class="modal-body">
+          <form action="{% url 'register' %}" method="post">
+            {% csrf_token %}
+            <label class="form-label" for="profil">profil foto</label>
+            <input class="form-control" name="profil" id="profill" type="file">
+            <label class="form-label" for="username"> Username</label>
+            <input class="form-control"  type="text" name="username" id="username" placeholder="type your username"> 
+            <label class="form-label" for="email"> email</label>
+            <input class="form-control" type="text" name="email" id="email" placeholder="type your email"> 
+            <label class="form-label" for="password"> password</label>
+            <input class="form-control" type="text" name="password" id="password" placeholder="type your password"> 
+            <label class="form-label" for="repassword"> repassword</label>
+            <input class="form-control" type="text" name="repassword" id="repassword" placeholder="type your password again"> 
+            <div class="row">
+                <div class="col-2">
+                    <label for="gender" class="form-label">cinsiyetiniz:</label>
+                </div>
+                <div class="col-10 ">
+                    <input type="radio" name="gender" class="form-radio ms-2" id="male">
+                    <label class="form-radio" for="male">male</label>
+                    <br>
+                    <input type="radio" name="gender" class="form-radio ms-2" id="famale">
+                    <label class="form-radio" for="famale">famale</label>
+                </div>
+            </div>
+            <br><br>
+            <button class="btn btn-primary " type="submit"> register</button>
+          </form>
+        </div>
+        
+    </div>
+</div>
+
+
+
+
+
+</header>

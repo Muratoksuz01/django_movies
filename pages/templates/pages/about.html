@@ -1,0 +1,28 @@
+{% extends 'pages/main.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class=" card mb-3">
+            <div class="row">
+
+                <div class=" col-md-3">
+                    <img class="card-img-start" src="{{movie.img.url}}" alt="resim burada">
+                </div>
+                <div class="col-md-9 mt-2">
+                    <div class="card-body">
+                        <div class="card-title">{{movie.name}}</div>
+                        <p class="card-text">{{movie.description}}</p>
+                        <p class="card-text">
+                            <small class="text muted">{{movie.created_date|timesince}}</small>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
